@@ -35,7 +35,7 @@ public class TouclickController {
     * @return void    返回类型
     * @throws
      */
-    @RequestMapping(value = "/verify",method = RequestMethod.POST)
+    @RequestMapping(value = "/postdata",method = RequestMethod.POST)
     public void  verify(final HttpServletRequest request,HttpServletResponse response) throws TouclickException{
     	/*
     	*  token 二次验证口令，单次有效
