@@ -1,13 +1,13 @@
-#点触验证码 Java SDK
+# 点触验证码 Java SDK
 
-#####[其他语言SDK以及JS API https://github.com/touclick/captcha-demo](https://github.com/touclick/captcha-demo)
+##### [其他语言SDK以及JS API https://github.com/touclick/captcha-demo](https://github.com/touclick/captcha-demo)
 
-##开发环境
+## 开发环境
   
   - JDK 1.5及以上
   - Tomcat 6.0及以上
 
-##文件说明
+## 文件说明
 
 * ActivateServlet.java/ 激活功能,为了确保您的公钥能正常使用,请务必使用配套的SDK进行激活
 * captcha-demo/ web项目调用演示
@@ -16,7 +16,7 @@
   
 
 
-##使用指南
+## 使用指南
 1. 在`TouclickController`中填写从点触官网注册获得的公钥和私钥
    ```java	
    private static final String PUBKEY = "";//公钥(从点触官网获取)
@@ -60,7 +60,7 @@
 
 
 
-####调用SDK
+#### 调用SDK
 
 在pom.xml中添加对java-sdk的依赖，当您准备将点触添加到您的项目中去时，请先依赖该项目
 
