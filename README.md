@@ -6,6 +6,8 @@
 
 
 
+
+
 # 点触验证码 Java SDK
 
 ##### [其他语言SDK以及JS API https://github.com/touclick/captcha-demo](https://github.com/touclick/captcha-demo)
