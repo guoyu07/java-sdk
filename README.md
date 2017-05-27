@@ -1,8 +1,17 @@
+哈哈哈哈哈哈 
+
+
+我是测试的
+
+
+
+
 # 点触验证码 Java SDK
 
 ##### [其他语言SDK以及JS API https://github.com/touclick/captcha-demo](https://github.com/touclick/captcha-demo)
 
 ## 开发环境
+
   
   - JDK 1.5及以上
   - Tomcat 6.0及以上
