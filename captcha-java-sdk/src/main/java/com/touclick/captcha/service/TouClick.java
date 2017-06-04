@@ -125,7 +125,8 @@ public class TouClick implements Serializable{
         if (response != null){
             Result result = null;
             try{
-                System.out.println("info:" + response.getInfo());
+                LOGGER.debug("info:{}", response.getInfo());
+
                 result = mapper.readValue(response.getInfo(), Result.class);
                 if (result.getCode() == 0){
                     if (result.getSign() != null && !"".equals(result.getSign())
