@@ -1,21 +1,23 @@
 package com.touclick.captcha.util;
 
 import java.io.UnsupportedEncodingException;
-import java.security.SignatureException;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
-public class MD5 {
+public class MD5{
 
     /**
      * 签名字符串
      *
-     * @param text          需要签名的字符串
-     * @param key           密钥
-     * @param input_charset 编码格式
+     * @param text
+     *            需要签名的字符串
+     * @param key
+     *            密钥
+     * @param input_charset
+     *            编码格式
      * @return 签名结果
      */
-    public static String sign(String text, String key, String input_charset) {
+    public static String sign(String text,String key,String input_charset){
         text = text + key;
         return DigestUtils.md5Hex(getContentBytes(text, input_charset));
     }
@@ -23,20 +25,20 @@ public class MD5 {
     /**
      * 签名字符串
      *
-     * @param text          需要签名的字符串
-     * @param sign          签名结果
-     * @param key           密钥
-     * @param input_charset 编码格式
+     * @param text
+     *            需要签名的字符串
+     * @param sign
+     *            签名结果
+     * @param key
+     *            密钥
+     * @param input_charset
+     *            编码格式
      * @return 签名结果
      */
-    public static boolean verify(String text, String sign, String key, String input_charset) {
+    public static boolean verify(String text,String sign,String key,String input_charset){
         text = text + key;
         String mysign = DigestUtils.md5Hex(getContentBytes(text, input_charset));
-        if (mysign.equals(sign)) {
-            return true;
-        } else {
-            return false;
-        }
+        return mysign.equals(sign);
     }
 
     /**
@@ -44,13 +46,13 @@ public class MD5 {
      * @param charset
      * @return
      */
-    private static byte[] getContentBytes(String content, String charset) {
-        if (charset == null || "".equals(charset)) {
+    private static byte[] getContentBytes(String content,String charset){
+        if (charset == null || "".equals(charset)){
             return content.getBytes();
         }
-        try {
+        try{
             return content.getBytes(charset);
-        } catch (UnsupportedEncodingException e) {
+        }catch (UnsupportedEncodingException e){
             throw new RuntimeException("MD5签名过程中出现错误,指定的编码集不对,您目前指定的编码集是:" + charset);
         }
     }
