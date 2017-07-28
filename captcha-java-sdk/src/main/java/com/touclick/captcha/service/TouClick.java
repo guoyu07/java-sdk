@@ -52,16 +52,16 @@ import com.touclick.captcha.util.TouclickUtil;
 public class TouClick implements Serializable{
 
     /** The Constant log. */
-    private static final Logger LOGGER           = LoggerFactory.getLogger(TouClick.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(TouClick.class);
 
     /** The Constant serialVersionUID. */
-    private static final long   serialVersionUID = -176092625883595547L;
+    private static final long serialVersionUID = -176092625883595547L;
 
     /** The Constant HTTP. */
-    private static final String HTTP             = "http://";
+    private static final String HTTP = "http://";
 
     /** The Constant CHECK_POSTFIX. */
-    private static final String CHECK_POSTFIX    = ".touclick.com/sverify.touclick2";
+    private static final String CHECK_POSTFIX = ".touclick.com/sverify.touclick2";
 
     /** The Constant CALLBACK_POSTFIX. */
     private static final String CALLBACK_POSTFIX = ".touclick.com/callback";
@@ -69,10 +69,10 @@ public class TouClick implements Serializable{
     //---------------------------------------------------------------
 
     /** The client. */
-    private final HttpClient    client           = new HttpClient();
+    private final HttpClient client = new HttpClient();
 
     /** <code>{@value}</code>. */
-    public static final String  IP               = getIp();
+    public static final String IP = getIp();
 
     //---------------------------------------------------------------
 
@@ -118,8 +118,7 @@ public class TouClick implements Serializable{
      * @throws TouclickException
      *             the touclick exception
      */
-    public Status check(String checkAddress,String sid,String token,String pubKey,String priKey,String userName,String userId)
-                    throws TouclickException{
+    public Status check(String checkAddress,String sid,String token,String pubKey,String priKey,String userName,String userId) throws TouclickException{
         Validate.notBlank(checkAddress, "checkAddress can't be blank!");
         Validate.notBlank(pubKey, "pubKey can't be blank!");
         Validate.notBlank(priKey, "priKey can't be blank!");
@@ -153,7 +152,10 @@ public class TouClick implements Serializable{
         Response response = client.get(url.toString(), params);
 
         //---------------------------------------------------------------
-        LOGGER.debug("info:{}", response.getInfo());
+
+        if (LOGGER.isDebugEnabled()){
+            LOGGER.debug("info:{}", response.getInfo());
+        }
 
         //---------------------------------------------------------------
         ObjectMapper mapper = new ObjectMapper();
@@ -201,10 +203,8 @@ public class TouClick implements Serializable{
      * @throws TouclickException
      *             the touclick exception
      */
-    public void callback(String checkAddress,String sid,String token,String pubKey,String priKey,boolean isLoginSucc)
-                    throws TouclickException{
-        if (checkAddress == null || "".equals(checkAddress) || token == null || "".equals(token) || pubKey == null || "".equals(pubKey)
-                        || priKey == null || "".equals(priKey) || sid == null || "".equals(sid)){
+    public void callback(String checkAddress,String sid,String token,String pubKey,String priKey,boolean isLoginSucc) throws TouclickException{
+        if (checkAddress == null || "".equals(checkAddress) || token == null || "".equals(token) || pubKey == null || "".equals(pubKey) || priKey == null || "".equals(priKey) || sid == null || "".equals(sid)){
             throw new TouclickException("参数有误");
         }
 
