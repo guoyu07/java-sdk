@@ -3,8 +3,7 @@
 
 	<groupId>com.touclick.captcha</groupId>
 	<artifactId>java-sdk</artifactId>
-	<!-- <version>1.1.1.baozun.RELEASE</version> -->
-	<version>1.1.2.baozun.RELEASE</version>
+	<version>1.1.3.baozun.RELEASE</version>
 	<packaging>jar</packaging>
 
 	<name>captcha-java-sdk</name>
@@ -14,7 +13,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- log4j日志文件管理包版本 -->
 		<slf4j.version>1.6.6</slf4j.version>
-		<version.commons-lang3>3.6</version.commons-lang3>
+		<version.commons-lang3>3.7</version.commons-lang3>
 	</properties>
 
 	<dependencies>
